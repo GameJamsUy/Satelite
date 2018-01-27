@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Test
   - 
   - 
   - 
@@ -40,4 +41,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1212782503
+    locked: 0
+  - name: BackgroundParticles
+    uniqueID: 1145540711
+    locked: 0
+  - name: SatParticles
+    uniqueID: 2724108883
+    locked: 0
+  - name: Satellites
+    uniqueID: 412188857
+    locked: 0
+  - name: Buildings
+    uniqueID: 2934761201
+    locked: 0
+  - name: Buttons
+    uniqueID: 4251288383
+    locked: 0
+  - name: UI
+    uniqueID: 2344978561
     locked: 0

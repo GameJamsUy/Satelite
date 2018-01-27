@@ -87,7 +87,6 @@ public class Lever : MonoBehaviour {
         float startPos = pos.y;
         float targetPos = initialTransPos.y;
         while (currTime < totalTime){
-            Debug.Log(startPos + " / " + targetPos + " / " + pos.y);
             currTime += Time.deltaTime;
             float t = currTime / totalTime;
             transform.position = new Vector2(pos.x, Mathf.Lerp(startPos, targetPos, t));
