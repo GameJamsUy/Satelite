@@ -17,7 +17,7 @@ public class City : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        transform.position = new Vector3(transform.position.x, transform.position.y, 3);
 	}
 	
 	// Update is called once per frame
