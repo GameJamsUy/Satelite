@@ -12,10 +12,14 @@ public class MainLevelScript : MonoBehaviour {
     public GameObject relayPrefab;
     public GameObject echoPrefab;
     public GameObject cityPrefab;
+    public GameObject winScreen;
+    public GameObject loseScreen;
 
     public bool[] citiesInfo;
 
     public SatInfo[] satsToSpawn;
+    private bool won = false;
+    private bool lost = false;
 
     void Awake(){
         Manager.Inst().Destroy();
@@ -48,8 +52,17 @@ public class MainLevelScript : MonoBehaviour {
 	}
 
     void Update(){
-        if (CheckWinCondition()){
-            Debug.Log("WINNN!!!");
+        if (CheckWinCondition() && !won){
+            GameObject go = Instantiate(winScreen);
+            go.transform.SetParent(GameObject.Find("Canvas").transform);
+            go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            won = true;
+        }
+        else if (CheckLoseCondition() && !lost){
+            GameObject go = Instantiate(loseScreen);
+            go.transform.SetParent(GameObject.Find("Canvas").transform);
+            go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            lost = true;
         }
     }
 
@@ -111,6 +124,11 @@ public class MainLevelScript : MonoBehaviour {
             return false;
         }
         return true;
+    }
+
+    bool CheckLoseCondition(){
+        //todo
+        return false;
     }
     
     void SpawnRelay(int i) {
