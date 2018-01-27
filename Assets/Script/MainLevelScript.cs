@@ -18,6 +18,6 @@ public class MainLevelScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        //Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 	}
 }
