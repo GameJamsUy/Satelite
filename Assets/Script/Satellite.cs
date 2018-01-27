@@ -7,9 +7,9 @@ public class Satellite : MonoBehaviour {
     public static readonly int STATE_IDLE       = 0;
     public static readonly int STATE_TURNING    = 1;
 
-    public static readonly int COLOR_RED   = 0;
-    public static readonly int COLOR_GREEN = 1;
-    public static readonly int COLOR_BLUE  = 2;
+    public const int COLOR_RED   = 0;
+    public const int COLOR_GREEN = 1;
+    public const int COLOR_BLUE  = 2;
 
     public static readonly float[] ANGLES       = { 0, 90, 180, 270 };
     public static readonly float ANGLE_UP       = 0;
@@ -22,6 +22,7 @@ public class Satellite : MonoBehaviour {
     public const int ROTATE_INVERT    = 2;
     public const int ROTATE_FULL_TURN = 3;
 
+    public Sprite[] colors;
     private int color;
     private int angle;
     private float angleDeg;
@@ -35,7 +36,7 @@ public class Satellite : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.LeftArrow)){
-            Rotate(ROTATE_LEFT);
+            Rotate(ROTATE_INVERT);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow)){
@@ -113,6 +114,8 @@ public class Satellite : MonoBehaviour {
 
     public void SetColor(int aColor){
         color = aColor;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = colors[color];
     }
 
     public float GetAngleDegrees(){
