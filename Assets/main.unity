@@ -146,6 +146,8 @@ MonoBehaviour:
   relayPrefab: {fileID: 1662843700380820, guid: 5c63f26cfbb12574480b7213141e13f6,
     type: 2}
   echoPrefab: {fileID: 1427398023912540, guid: fe2744b3e8a08e04f83d07c4fa0229c8, type: 2}
+  cityPrefab: {fileID: 1502146480000150, guid: 9ccd37062b6827c4097c08c05606d4b4, type: 2}
+  citiesInfo: 000001010101
   satsToSpawn:
   - satType: 2
     satRow: 2

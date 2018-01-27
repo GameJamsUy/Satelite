@@ -11,6 +11,9 @@ public class MainLevelScript : MonoBehaviour {
     public GameObject satellitePrefab;
     public GameObject relayPrefab;
     public GameObject echoPrefab;
+    public GameObject cityPrefab;
+
+    public bool[] citiesInfo;
 
     public SatInfo[] satsToSpawn;
 
@@ -19,6 +22,7 @@ public class MainLevelScript : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
+        SpawnCity();
         for (int i = 0; i <= GameConstants.maxX; i++){
             switch (satsToSpawn[i].satType) {
                 case SatTypes.COLOR_RED:
@@ -39,13 +43,25 @@ public class MainLevelScript : MonoBehaviour {
                 default:
                     break;
             }
-            //SpawnSatellite(i);
         }
+        
 	}
 
     void Update(){
         if (CheckWinCondition()){
             Debug.Log("WINNN!!!");
+        }
+    }
+
+    void SpawnCity() {
+        for (int i = 0; i < citiesInfo.Length; i++) {
+            if (citiesInfo[i] == true) {
+                GameObject go = Instantiate(cityPrefab);
+                City city = go.GetComponent<City>();
+                city.SetX(i);
+                city.SetY(0);
+                Manager.AddCity(city);
+            }
         }
     }
 
@@ -90,6 +106,9 @@ public class MainLevelScript : MonoBehaviour {
             if(currCity.GetState() == City.STATE_OFF){
                 return false;
             }
+        }
+        if (Manager.GetCities().Count == 0){
+            return false;
         }
         return true;
     }
