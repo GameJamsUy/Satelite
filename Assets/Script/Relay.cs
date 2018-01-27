@@ -6,6 +6,7 @@ public class Relay : MonoBehaviour {
     public const int STATE_DISCONNECTED = 0;
     public const int STATE_CONNECTED    = 1;
 
+    public Sprite[] onOffFrames;
     private int state = 0;
     private int currX;
     private int currY;
@@ -18,7 +19,12 @@ public class Relay : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(GetState() == STATE_DISCONNECTED && IsBeingActivated()){
+            SetState(STATE_CONNECTED);
+        }
+        else if (GetState() == STATE_CONNECTED && !IsBeingActivated()){
+            SetState(STATE_DISCONNECTED);
+        }
 	}
 
 
@@ -78,7 +84,6 @@ public class Relay : MonoBehaviour {
         while (currTime < totalTime){
             currTime += Time.deltaTime;
             float t = currTime / totalTime;
-            Debug.Log(t);
             transform.position = new Vector3(transform.position.x, Mathf.Lerp(startPos, targetY, t));
             yield return null;
         }
@@ -111,9 +116,31 @@ public class Relay : MonoBehaviour {
 
     public void SetState(int aState){
         state = aState;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (state == STATE_CONNECTED){
+            sr.sprite = onOffFrames[1];
+        }
+        else{
+            sr.sprite = onOffFrames[0];
+        }
     }
 
     public int GetState(){
         return state;
+    }
+
+    public bool IsBeingActivated(){
+        foreach (Satellite currSat in Manager.GetSatellites()){
+            if (currSat.GetY() == GetY() && currSat.GetX() == GetX() - 1 && currSat.GetAngleDegrees() == Satellite.ANGLE_RIGHT){
+                //Debug.Log("relay activated by left sat pointing right");
+                return true;
+            }
+            if (currSat.GetY() == GetY() && currSat.GetX() == GetX() + 1 && currSat.GetAngleDegrees() == Satellite.ANGLE_LEFT){
+                //Debug.Log("relay activated by right sat pointing left");
+                return true;
+            }
+        }
+
+        return false;
     }
 }

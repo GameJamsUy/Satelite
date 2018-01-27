@@ -66,13 +66,11 @@ public class MainLevelScript : MonoBehaviour {
             satellite.SetStartingRotation(Satellite.ANGLE_DOWN);
         }
         else if (satsToSpawn[i].satRotation == SatRotation.LEFT) {
-            //satellite.SetStartingRotation(Satellite.ANGLE_LEFT);
-            satellite.SetStartingRotation(Satellite.ANGLE_RIGHT);
+            satellite.SetStartingRotation(Satellite.ANGLE_LEFT);
 
         }
         else if (satsToSpawn[i].satRotation == SatRotation.RIGHT) {
-            //satellite.SetStartingRotation(Satellite.ANGLE_RIGHT);
-            satellite.SetStartingRotation(Satellite.ANGLE_LEFT);
+            satellite.SetStartingRotation(Satellite.ANGLE_RIGHT);
         }
 
         satellite.SetX(i);
