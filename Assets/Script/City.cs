@@ -8,6 +8,9 @@ public class City : MonoBehaviour {
 
     private int state;
     public Sprite[] onOffFrames;
+    public GameObject onParticleSystem;
+    public GameObject onParticleSystemSideways;
+    private bool sidewaysTransmission;
 
     private int x;
     private int y;
@@ -35,9 +38,18 @@ public class City : MonoBehaviour {
         state = aState;
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (state == STATE_ON){
+            if (!sidewaysTransmission){
+                onParticleSystem.SetActive(true);
+            }
+            else{
+                onParticleSystem.SetActive(false);
+                onParticleSystemSideways.SetActive(true);
+            }
             sr.sprite = onOffFrames[1];
         }
         else{
+            onParticleSystem.SetActive(false);
+            onParticleSystemSideways.SetActive(false);
             sr.sprite = onOffFrames[0];
         }
     }
@@ -50,8 +62,12 @@ public class City : MonoBehaviour {
         }
 
         foreach (Echo currEcho in Manager.GetEchos()){
-            if (currEcho.GetX() == GetX() && currEcho.GetState() == Echo.STATE_ON
-             || currEcho.GetX() + 1 == GetX() && currEcho.GetState() == Echo.STATE_ON){
+            if (currEcho.GetX() == GetX() && currEcho.GetState() == Echo.STATE_ON){
+                return true;
+            }
+            if (currEcho.GetX() + 1 == GetX() && currEcho.GetState() == Echo.STATE_ON){
+                sidewaysTransmission = true;
+                Debug.Log(sidewaysTransmission);
                 return true;
             }
         }

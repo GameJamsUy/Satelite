@@ -7,6 +7,9 @@ public class Relay : MonoBehaviour {
     public const int STATE_CONNECTED    = 1;
 
     public Sprite[] onOffFrames;
+    public GameObject[] transmissionParticles;
+    private bool recievingFromLeft;
+
     private int state = 0;
     private int currX;
     private int currY;
@@ -118,9 +121,20 @@ public class Relay : MonoBehaviour {
         state = aState;
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if (state == STATE_CONNECTED){
+            if (recievingFromLeft){
+                transmissionParticles[0].SetActive(false);
+                transmissionParticles[1].SetActive(true);
+            }
+            else{
+                transmissionParticles[0].SetActive(true);
+                transmissionParticles[1].SetActive(false);
+            }
             sr.sprite = onOffFrames[1];
         }
         else{
+            transmissionParticles[0].SetActive(false);
+            transmissionParticles[1].SetActive(false);
+            recievingFromLeft = false;
             sr.sprite = onOffFrames[0];
         }
     }
@@ -132,10 +146,12 @@ public class Relay : MonoBehaviour {
     public bool IsBeingActivated(){
         foreach (Satellite currSat in Manager.GetSatellites()){
             if (currSat.GetY() == GetY() && currSat.GetX() == GetX() - 1 && currSat.GetAngleDegrees() == Satellite.ANGLE_RIGHT){
+                recievingFromLeft = true;
                 //Debug.Log("relay activated by left sat pointing right");
                 return true;
             }
             if (currSat.GetY() == GetY() && currSat.GetX() == GetX() + 1 && currSat.GetAngleDegrees() == Satellite.ANGLE_LEFT){
+                recievingFromLeft = false;
                 //Debug.Log("relay activated by right sat pointing left");
                 return true;
             }
