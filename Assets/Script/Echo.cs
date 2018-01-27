@@ -24,7 +24,6 @@ public class Echo : MonoBehaviour {
         else if(GetState() == STATE_ON && !IsBeingActivated()){
             SetState(STATE_OFF);
         }
-        Debug.Log(state);
     }
 
     public int GetX()
