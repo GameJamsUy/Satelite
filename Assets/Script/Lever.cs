@@ -16,11 +16,13 @@ public class Lever : MonoBehaviour {
 
     private void Awake() {
         animator = transform.GetChild(0).GetComponent<Animator>();
+        initialTransPos = transform.position;
     }
 
     public Sprite[] buttonSprites;
     public float idlePos;
     public float endPos;
+    private Vector2 initialTransPos;
 
     int red = 0;
     int green = 1;
@@ -83,9 +85,8 @@ public class Lever : MonoBehaviour {
         float currTime = 0;
         Vector2 pos = transform.position;
         float startPos = pos.y;
-        float targetPos = startPos - endPos;
+        float targetPos = initialTransPos.y;
         while (currTime < totalTime){
-            Debug.Log(startPos + " / " + targetPos + " / " + pos.y);
             currTime += Time.deltaTime;
             float t = currTime / totalTime;
             transform.position = new Vector2(pos.x, Mathf.Lerp(startPos, targetPos, t));
