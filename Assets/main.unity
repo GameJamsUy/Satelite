@@ -147,7 +147,7 @@ MonoBehaviour:
     type: 2}
   echoPrefab: {fileID: 1427398023912540, guid: fe2744b3e8a08e04f83d07c4fa0229c8, type: 2}
   satsToSpawn:
-  - satType: 0
+  - satType: 2
     satRow: 2
     satRotation: 2
   - satType: 3
