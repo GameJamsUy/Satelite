@@ -215,7 +215,7 @@ public class Satellite : MonoBehaviour {
         }
 
         foreach (Echo currEcho in Manager.GetEchos()){
-            if (currEcho.GetY() == GetY() - 1 && angleDeg == ANGLE_LEFT || currEcho.GetY() == GetY() + 1 && angleDeg == ANGLE_RIGHT){
+            if (currEcho.GetX() == GetX() - 1 && angleDeg == ANGLE_LEFT || currEcho.GetX() == GetX() + 1 && angleDeg == ANGLE_RIGHT){
                 return true;
             }
         }

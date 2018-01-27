@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4037495236459134}
   - component: {fileID: 212705558574772706}
   - component: {fileID: 114640226007434736}
+  - component: {fileID: 114795232583410714}
   m_Layer: 0
   m_Name: Satellite
   m_TagString: Untagged
@@ -89,6 +90,26 @@ MonoBehaviour:
   - {fileID: 21300002, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
   - {fileID: 21300000, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
   transmittingParticle: {fileID: 1763656188128086}
+--- !u!114 &114795232583410714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860245808128708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc3d74b55bab9564c95c61c9b0cadc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 0
+  speedY: 0
+  speedZ: 0
+  oscillate: 1
+  maxY: 50
+  minY: 30
+  upward: 0
+  vel: 0
+  accel: 30
 --- !u!198 &198683280864680310
 ParticleSystem:
   m_ObjectHideFlags: 1
