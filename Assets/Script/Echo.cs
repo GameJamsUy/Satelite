@@ -51,4 +51,16 @@ public class Echo : MonoBehaviour {
     public int GetState(){
         return state;
     }
+
+    public bool IsBeingActivated(){
+        foreach (Satellite currSat in Manager.GetSatellites()){
+            if(currSat.GetX() == GetX() - 1 && currSat.GetAngleDegrees() == Satellite.ANGLE_RIGHT){
+                Debug.Log("left sat pointing right");
+            }
+            if (currSat.GetX() == GetX() + 1 && currSat.GetAngleDegrees() == Satellite.ANGLE_LEFT){
+                Debug.Log("left sat pointing right");
+            }
+        }
+        return false;
+    }
 }

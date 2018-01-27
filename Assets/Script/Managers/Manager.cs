@@ -49,7 +49,7 @@ public class Manager{
         return Manager.Inst().sManager.GetSatellites();
     }
 
-    public static List<Echo> GetSattelites() {
+    public static List<Echo> GetEchos() {
         return Manager.Inst().eManager.GetEchos();
     }
 

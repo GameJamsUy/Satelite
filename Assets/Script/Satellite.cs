@@ -13,9 +13,9 @@ public class Satellite : MonoBehaviour {
 
     public static readonly float[] ANGLES       = { 0, 90, 180, 270 };
     public static readonly float ANGLE_UP       = 0;
-    public static readonly float ANGLE_RIGHT    = 90;
+    public static readonly float ANGLE_RIGHT    = 270;
     public static readonly float ANGLE_DOWN     = 180;
-    public static readonly float ANGLE_LEFT     = 270;
+    public static readonly float ANGLE_LEFT     = 90;
 
     public const int ROTATE_RIGHT     = 0;
     public const int ROTATE_LEFT      = 1;

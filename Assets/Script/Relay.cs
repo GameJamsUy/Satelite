@@ -44,16 +44,45 @@ public class Relay : MonoBehaviour {
 
     public void MoveUp(){
         if(currY < GameConstants.maxY){
-            transform.position = new Vector2(transform.position.x, transform.position.y + GameConstants.stepY);
+            float targetY = transform.position.y + GameConstants.stepY;
+            StartCoroutine(MoveToY(targetY));
         }
         currY += 1;
     }
 
     public void MoveDown(){
         if (currY > GameConstants.minY){
-            transform.position = new Vector2(transform.position.x, transform.position.y - GameConstants.stepY);
+            float targetY = transform.position.y - GameConstants.stepY;
+            StartCoroutine(MoveToY(targetY));
         }
         currY -= 1;
+    }
+
+    private IEnumerator MoveToX(float targetX){
+        float totalTime = 1;
+        float currTime = 0;
+        float startPos = transform.position.x;
+        while(currTime < totalTime){
+            currTime += Time.deltaTime;
+            float t = currTime / totalTime;
+            transform.position = new Vector3(Mathf.Lerp(startPos, targetX, t), transform.position.y);
+            yield return null;
+        }
+        yield return null;
+    }
+
+    private IEnumerator MoveToY(float targetY){
+        float totalTime = 1;
+        float currTime = 0;
+        float startPos = transform.position.y;
+        while (currTime < totalTime){
+            currTime += Time.deltaTime;
+            float t = currTime / totalTime;
+            Debug.Log(t);
+            transform.position = new Vector3(transform.position.x, Mathf.Lerp(startPos, targetY, t));
+            yield return null;
+        }
+        yield return null;
     }
 
     public int GetX()

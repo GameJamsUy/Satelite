@@ -14,6 +14,9 @@ public class MainLevelScript : MonoBehaviour {
 
     public SatInfo[] satsToSpawn;
 
+    void Awake(){
+        Manager.Inst().Destroy();
+    }
     // Use this for initialization
     void Start () {
         for (int i = 0; i <= GameConstants.maxX; i++){
@@ -96,6 +99,9 @@ public class MainLevelScript : MonoBehaviour {
         Manager.AddEcho(echo);
     }
 
+    void OnDestroy(){
+        Manager.Inst().Destroy();
+    }
 
     [System.Serializable]
     public struct SatInfo {
@@ -103,5 +109,7 @@ public class MainLevelScript : MonoBehaviour {
         public int satRow;
         public SatRotation satRotation;
     }
+
+
     
 }
