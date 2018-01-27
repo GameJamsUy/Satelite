@@ -165,8 +165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onOffFrames:
-  - {fileID: 21300000, guid: 007253c68304aed4d8b2436c9df69152, type: 3}
-  - {fileID: 21300002, guid: 007253c68304aed4d8b2436c9df69152, type: 3}
+  - {fileID: 21300000, guid: 3ccec0b93b27f39449221a1e6997b439, type: 3}
+  - {fileID: 21300002, guid: 3ccec0b93b27f39449221a1e6997b439, type: 3}
   onParticle: {fileID: 1069572838407824}
 --- !u!198 &198684465471968390
 ParticleSystem:
@@ -5573,7 +5573,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 412188857
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 007253c68304aed4d8b2436c9df69152, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3ccec0b93b27f39449221a1e6997b439, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

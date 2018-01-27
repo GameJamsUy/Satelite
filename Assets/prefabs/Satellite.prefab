@@ -85,9 +85,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colors:
-  - {fileID: 21300006, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
-  - {fileID: 21300004, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
-  - {fileID: 21300002, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
+  - {fileID: 21300004, guid: 37293bc028adc7b4baf00c440fd59d76, type: 3}
+  - {fileID: 21300000, guid: 37293bc028adc7b4baf00c440fd59d76, type: 3}
+  - {fileID: 21300002, guid: 37293bc028adc7b4baf00c440fd59d76, type: 3}
   - {fileID: 21300000, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
   transmittingParticle: {fileID: 1763656188128086}
 --- !u!114 &114795232583410714
@@ -2828,7 +2828,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 412188857
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37293bc028adc7b4baf00c440fd59d76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
