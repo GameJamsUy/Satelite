@@ -9,6 +9,7 @@ public class Manager{
 	private RelayManager rManager;
     private SatelliteManager sManager;
     private EchoManager eManager;
+    private CityManager cManager;
 
 	public static Manager Inst(){
 		if(Manager.manager == null){
@@ -29,6 +30,10 @@ public class Manager{
         return Manager.Inst().eManager;
     }
 
+    public static CityManager CityManager(){
+        return Manager.Inst().cManager;
+    }
+
     public static void AddEcho(Echo e) {
         Manager.Inst().eManager.Add(e);
     }
@@ -39,6 +44,9 @@ public class Manager{
 
     public static void AddSatellite(Satellite s){
         Manager.Inst().sManager.Add(s);
+    }
+    public static void AddCity(City c){
+        Manager.Inst().cManager.Add(c);
     }
 
     public static List<Relay> GetRelays(){
@@ -52,6 +60,9 @@ public class Manager{
     public static List<Echo> GetEchos() {
         return Manager.Inst().eManager.GetEchos();
     }
+    public static List<City> GetCities(){
+        return Manager.Inst().cManager.GetCities();
+    }
 
     public Manager(){
 		if(Manager.manager != null){
@@ -60,6 +71,7 @@ public class Manager{
 		this.rManager = new RelayManager();
         this.sManager = new SatelliteManager();
         this.eManager = new EchoManager();
+        this.cManager = new CityManager();
     }
 
 	public void Destroy(){
@@ -71,6 +83,9 @@ public class Manager{
 
         this.eManager.Destroy();
         this.eManager = null;
+
+        this.cManager.Destroy();
+        this.cManager = null;
 
 		Manager.manager = null;
 		//GameObject.Destroy(gameObject);
