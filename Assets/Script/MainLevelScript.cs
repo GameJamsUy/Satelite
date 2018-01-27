@@ -43,6 +43,12 @@ public class MainLevelScript : MonoBehaviour {
         }
 	}
 
+    void Update(){
+        if (CheckWinCondition()){
+            Debug.Log("WINNN!!!");
+        }
+    }
+
     void SpawnSatellite(int i) {
         GameObject go = Instantiate(satellitePrefab);
         Satellite satellite = go.GetComponent<Satellite>();
@@ -79,6 +85,14 @@ public class MainLevelScript : MonoBehaviour {
         Manager.AddSatellite(satellite);
     }
 
+    bool CheckWinCondition(){
+        foreach (City currCity in Manager.GetCities()){
+            if(currCity.GetState() == City.STATE_OFF){
+                return false;
+            }
+        }
+        return true;
+    }
     
     void SpawnRelay(int i) {
         GameObject go = Instantiate(relayPrefab);
