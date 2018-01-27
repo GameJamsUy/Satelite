@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartScreenManager : MonoBehaviour {
 
@@ -21,8 +22,7 @@ public class StartScreenManager : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    
+        
     public void CreditsClick() {
         currentLerpTime = 0f;
         animatorCoroutine = animateOverTime(cameraTransform.position.x, creditsScreen.position.x, cameraTransform.position.y, cameraTransform.position.z, cameraTransform);
@@ -35,7 +35,9 @@ public class StartScreenManager : MonoBehaviour {
         StartCoroutine(animatorCoroutine);
     }
 
-
+    public void PlayButtonClick() {
+        SceneManager.LoadScene("main", LoadSceneMode.Single);
+    }
 
 
     public IEnumerator animateOverTime(float startX, float endX, float startY, float startZ, Transform targetTransform) {

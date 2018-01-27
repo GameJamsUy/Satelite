@@ -51,6 +51,13 @@ public class InputHandler : MonoBehaviour {
             startScreen.BackCreditsClick();
         }
 
+
+        //User clicks on play button in start menu
+        if (hit.collider != null && hit.collider.name == ("StartGameButton")) {
+            StartScreenManager startScreen = transform.GetComponent<StartScreenManager>();
+            startScreen.PlayButtonClick();
+        }
+
     }
 
 
