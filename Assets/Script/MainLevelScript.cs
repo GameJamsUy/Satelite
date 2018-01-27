@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainLevelScript : MonoBehaviour {
-    public enum SatTypes {COLOR_RED, COLOR_GREEN, COLOR_BLUE, RELAY, ECHO};
+    public enum SatTypes {COLOR_RED, COLOR_GREEN, COLOR_BLUE, RELAY, ECHO, NONE};
     public enum SatRotation {UP, DOWN, RIGHT, LEFT};
 
     //public SatelliteTypes[] satsToSpawn;

@@ -76,7 +76,7 @@ public class City : MonoBehaviour {
 
     public void SetY(int aY){
         if (aY >= GameConstants.minY && aY <= GameConstants.maxY){
-            transform.position = new Vector2(transform.position.x, GameConstants.startY + GameConstants.stepY * (aY));
+            transform.position = new Vector2(transform.position.x, GameConstants.startY + 40 + GameConstants.stepY * (aY));
             y = aY;
         }
     }
