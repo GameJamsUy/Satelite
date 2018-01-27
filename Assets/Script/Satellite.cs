@@ -26,6 +26,8 @@ public class Satellite : MonoBehaviour {
     private int color;
     private int angle;
     private float angleDeg;
+    private int currX;
+    private int currY;
     private int state;
 
 	// Use this for initialization
@@ -146,6 +148,14 @@ public class Satellite : MonoBehaviour {
                     break;
             }
         }
+    }
+
+    public int GetX(){
+        return currX;
+    }
+
+    public int GetY(){
+        return currY;
     }
 
     public void SetState(int aState){
