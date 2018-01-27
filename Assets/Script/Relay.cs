@@ -9,6 +9,8 @@ public class Relay : MonoBehaviour {
     private int state = 0;
     private int currX;
     private int currY;
+
+    private bool fromDown = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,6 +20,27 @@ public class Relay : MonoBehaviour {
 	void Update () {
 		
 	}
+
+
+    public void MoveVertical() {
+        if (currY == 2 && fromDown == false) {
+            MoveDown();
+        }
+        else if (currY == 2 && fromDown == true) {
+            MoveUp();
+            fromDown = false;
+        }
+        else if (currY == 3) {
+            MoveDown();
+            fromDown = false;
+        }
+        else if (currY == 1) {
+            MoveUp();
+            fromDown = true;
+        }
+        
+    } 
+
 
     public void MoveUp(){
         if(currY < GameConstants.maxY){
@@ -43,16 +66,16 @@ public class Relay : MonoBehaviour {
         return currY;
     }
 
-    public void SetX(int aX){
-        if (aX >= GameConstants.minX && aX <= GameConstants.maxX){
-            transform.position = new Vector2(GameConstants.stepX * (aX + 1), transform.position.y);
+    public void SetX(int aX) {
+        if (aX >= GameConstants.minX && aX <= GameConstants.maxX) {
+            transform.position = new Vector2(GameConstants.startX + GameConstants.stepX * (aX), transform.position.y);
             currX = aX;
         }
     }
 
-    public void SetY(int aY){
-        if (aY >= GameConstants.minY && aY <= GameConstants.maxY){
-            transform.position = new Vector2(transform.position.x, GameConstants.stepY * (aY + 1));
+    public void SetY(int aY) {
+        if (aY >= GameConstants.minY && aY <= GameConstants.maxY) {
+            transform.position = new Vector2(transform.position.x, GameConstants.startY + GameConstants.stepY * (aY));
             currY = aY;
         }
     }

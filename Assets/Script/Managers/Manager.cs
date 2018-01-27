@@ -8,6 +8,7 @@ public class Manager{
 	private static Manager manager;
 	private RelayManager rManager;
     private SatelliteManager sManager;
+    private EchoManager eManager;
 
 	public static Manager Inst(){
 		if(Manager.manager == null){
@@ -22,6 +23,14 @@ public class Manager{
 
     public static SatelliteManager SatelliteManager(){
         return Manager.Inst().sManager;
+    }
+
+    public static EchoManager EchoManager() {
+        return Manager.Inst().eManager;
+    }
+
+    public static void AddEcho(Echo e) {
+        Manager.Inst().eManager.Add(e);
     }
 
     public static void AddRelay(Relay r){
@@ -40,12 +49,18 @@ public class Manager{
         return Manager.Inst().sManager.GetSatellites();
     }
 
+    public static List<Echo> GetSattelites() {
+        return Manager.Inst().eManager.GetEchos();
+    }
+
     public Manager(){
 		if(Manager.manager != null){
 			throw new UnityException("Cannot create another instance of Manager");
 		}
 		this.rManager = new RelayManager();
-	}
+        this.sManager = new SatelliteManager();
+        this.eManager = new EchoManager();
+    }
 
 	public void Destroy(){
 		this.rManager.Destroy();
@@ -53,6 +68,9 @@ public class Manager{
 
         this.sManager.Destroy();
         this.sManager = null;
+
+        this.eManager.Destroy();
+        this.eManager = null;
 
 		Manager.manager = null;
 		//GameObject.Destroy(gameObject);

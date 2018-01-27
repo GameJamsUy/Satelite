@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1860245808128708}
+  m_RootGameObject: {fileID: 1662843700380820}
   m_IsPrefabParent: 1
---- !u!1 &1860245808128708
+--- !u!1 &1662843700380820
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4037495236459134}
-  - component: {fileID: 212705558574772706}
-  - component: {fileID: 114640226007434736}
+  - component: {fileID: 4871844089111754}
+  - component: {fileID: 212121427561978050}
+  - component: {fileID: 114926983670372784}
   m_Layer: 0
-  m_Name: Satellite
+  m_Name: Relay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4037495236459134
+--- !u!4 &4871844089111754
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860245808128708}
+  m_GameObject: {fileID: 1662843700380820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
@@ -41,28 +41,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114640226007434736
+--- !u!114 &114926983670372784
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860245808128708}
+  m_GameObject: {fileID: 1662843700380820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ac23d8ede29f94fbfd070df520f2de, type: 3}
+  m_Script: {fileID: 11500000, guid: 01db69f24bc070c42a316dc6aa275821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colors:
-  - {fileID: 21300006, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
-  - {fileID: 21300004, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
-  - {fileID: 21300002, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
-  - {fileID: 21300000, guid: b58c0de52e044fb4fa64f76f4da1c452, type: 3}
---- !u!212 &212705558574772706
+--- !u!212 &212121427561978050
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1860245808128708}
+  m_GameObject: {fileID: 1662843700380820}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

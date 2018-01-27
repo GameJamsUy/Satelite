@@ -128,6 +128,11 @@ public class Satellite : MonoBehaviour {
         angleDeg = aAngle;
     }
 
+    public void SetStartingRotation(float angle) {
+        angleDeg = angle;
+        transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
+    }
+
     public void Rotate(int satelliteRotation){
         if(state == STATE_IDLE){
             SetState(STATE_TURNING);
@@ -160,14 +165,14 @@ public class Satellite : MonoBehaviour {
 
     public void SetX(int aX){
         if(aX >= GameConstants.minX && aX <= GameConstants.maxX){
-            transform.position = new Vector2(GameConstants.stepX * (aX + 1), transform.position.y);
+            transform.position = new Vector2(GameConstants.startX + GameConstants.stepX * (aX), transform.position.y);
             currX = aX;
         }
     }
 
     public void SetY(int aY){
         if (aY >= GameConstants.minY && aY <= GameConstants.maxY){
-            transform.position = new Vector2(transform.position.x, GameConstants.stepY * (aY + 1));
+            transform.position = new Vector2(transform.position.x, GameConstants.startY + GameConstants.stepY * (aY));
             currY = aY;
         }
     }
