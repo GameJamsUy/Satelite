@@ -5,11 +5,11 @@ using UnityEngine;
 public class StartScreenManager : MonoBehaviour {
 
     public Transform cameraTransform;
-
+    public Transform creditsScreen;
+    public Transform mainMenuScreen;
 
     public float animationSpeed = 1.0f;
     private float currentLerpTime;
-
     private IEnumerator animatorCoroutine;
 
     // Use this for initialization
@@ -22,11 +22,23 @@ public class StartScreenManager : MonoBehaviour {
 		
 	}
 
+    
+    public void CreditsClick() {
+        currentLerpTime = 0f;
+        animatorCoroutine = animateOverTime(cameraTransform.position.x, creditsScreen.position.x, cameraTransform.position.y, cameraTransform.position.z, cameraTransform);
+        StartCoroutine(animatorCoroutine);
+    }
+
+    public void BackCreditsClick() {
+        currentLerpTime = 0f;
+        animatorCoroutine = animateOverTime(cameraTransform.position.x, mainMenuScreen.position.x, cameraTransform.position.y, cameraTransform.position.z, cameraTransform);
+        StartCoroutine(animatorCoroutine);
+    }
 
 
 
 
-    public IEnumerator animateOverTime(float startX, float startY, float endX, float endY, Transform targetTransform) {
+    public IEnumerator animateOverTime(float startX, float endX, float startY, float startZ, Transform targetTransform) {
         while (true) {
             //increment timer once per frame
             currentLerpTime += Time.deltaTime;
@@ -43,14 +55,14 @@ public class StartScreenManager : MonoBehaviour {
             if (t < 1.0f) {
                 Vector3 newCurrentPosition;
 
-                newCurrentPosition = new Vector3(Mathf.LerpAngle(startX, endX, t), Mathf.LerpAngle(startY, endY, t), 0.0f);
+                newCurrentPosition = new Vector3(Mathf.Lerp(startX, endX, t), startY, startZ);
                 targetTransform.position = newCurrentPosition;
 
 
                 yield return 0; // wait a frame
             }
             else {
-                Vector3 endPosition = new Vector3(endX, endY, 0.0f);
+                Vector3 endPosition = new Vector3(endX, startY, startZ);
                 targetTransform.position = endPosition; // Clamp end state;
 
                 StopCoroutine(animatorCoroutine);

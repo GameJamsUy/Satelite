@@ -149,7 +149,7 @@ MonoBehaviour:
   satsToSpawn:
   - satType: 2
     satRow: 2
-    satRotation: 2
+    satRotation: 0
   - satType: 3
     satRow: 3
     satRotation: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
     satRotation: 2
   - satType: 0
     satRow: 2
-    satRotation: 1
+    satRotation: 0
 --- !u!4 &228381191
 Transform:
   m_ObjectHideFlags: 0

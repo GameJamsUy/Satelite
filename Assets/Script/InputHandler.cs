@@ -29,7 +29,7 @@ public class InputHandler : MonoBehaviour {
         Vector3 touchPosF = Camera.main.ScreenToWorldPoint(touchPosFar);
         Vector3 touchPosN = Camera.main.ScreenToWorldPoint(touchPosNear);
 
-        //Debug.DrawRay(touchPosN, touchPosF - touchPosN, Color.red , 3.0f);
+        //User clicks on lever during play 
         RaycastHit2D hit = Physics2D.Raycast(touchPosN, touchPosF - touchPosN);
         if (hit.collider != null) {
             Lever _lever = hit.collider.GetComponent<Lever>();
@@ -37,6 +37,20 @@ public class InputHandler : MonoBehaviour {
                 _lever.LeverGetsClicked();
             }         
         }
+
+        //User clicks on Credits button in start menu
+        if (hit.collider != null && hit.collider.name == ("CreditsButton")) {
+            StartScreenManager startScreen = transform.GetComponent<StartScreenManager>();
+            startScreen.CreditsClick();
+        }
+
+
+        //User clicks on back button in credits
+        if (hit.collider != null && hit.collider.name == ("BackButton")) {
+            StartScreenManager startScreen = transform.GetComponent<StartScreenManager>();
+            startScreen.BackCreditsClick();
+        }
+
     }
 
 
