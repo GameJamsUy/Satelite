@@ -23,6 +23,8 @@ public class Satellite : MonoBehaviour {
     public const int ROTATE_FULL_TURN = 3;
 
     public Sprite[] colors;
+    private bool transmitting;
+    public GameObject transmittingParticle;
     private int color;
     private int angle;
     private float angleDeg;
@@ -37,12 +39,11 @@ public class Satellite : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.LeftArrow)){
-            Rotate(ROTATE_INVERT);
+        if (!IsTransmitting() && CheckTransmission()){
+            SetTransmitting(true);
         }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow)){
-            Rotate(ROTATE_RIGHT);
+        else if(IsTransmitting() && !CheckTransmission()){
+            SetTransmitting(false);
         }
     }
 
@@ -183,5 +184,41 @@ public class Satellite : MonoBehaviour {
 
     public int GetState(){
         return state;
+    }
+
+    public void SetTransmitting(bool value){
+        transmitting = value;
+        if (transmitting){
+            transmittingParticle.SetActive(true);
+        }
+        else{
+            transmittingParticle.SetActive(false);
+        }
+    }
+
+    public bool IsTransmitting(){
+        return transmitting;
+    }
+
+    private bool CheckTransmission(){
+        foreach (City currCity in Manager.GetCities()){
+            if (currCity.GetX() == GetX() && angleDeg == ANGLE_DOWN){
+                return true;
+            }
+        }
+
+        foreach (Relay currRelay in Manager.GetRelays()){
+            if (currRelay.GetX() == GetX() - 1 && currRelay.GetY() == GetY() && angleDeg == ANGLE_LEFT
+             || currRelay.GetX() == GetX() + 1 && currRelay.GetY() == GetY() && angleDeg == ANGLE_RIGHT){
+                return true;
+            }
+        }
+
+        foreach (Echo currEcho in Manager.GetEchos()){
+            if (currEcho.GetY() == GetY() - 1 && angleDeg == ANGLE_LEFT || currEcho.GetY() == GetY() + 1 && angleDeg == ANGLE_RIGHT){
+                return true;
+            }
+        }
+        return false;
     }
 }

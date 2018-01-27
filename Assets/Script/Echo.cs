@@ -7,6 +7,7 @@ public class Echo : MonoBehaviour {
     public const int STATE_ON  = 1;
 
     public Sprite[] onOffFrames;
+    public GameObject onParticle;
     private int state = 0;
     private int currX;
     private int currY;
@@ -55,9 +56,11 @@ public class Echo : MonoBehaviour {
         SpriteRenderer sr = GetComponent<SpriteRenderer>();
         if(state == STATE_ON){
             sr.sprite = onOffFrames[1];
+            onParticle.SetActive(true);
         }
         else{
             sr.sprite = onOffFrames[0];
+            onParticle.SetActive(false);
         }
     }
 
