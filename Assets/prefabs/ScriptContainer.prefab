@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1708763012995620}
+  m_IsPrefabParent: 1
+--- !u!1 &1708763012995620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4022477787185332}
+  - component: {fileID: 114406777076426204}
+  - component: {fileID: 114432538894747840}
+  - component: {fileID: 114743873022478208}
+  m_Layer: 0
+  m_Name: ScriptContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4022477787185332
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708763012995620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114406777076426204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708763012995620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0915301343ccc4045ad0a8021cb93fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMovementsAllowed: 10
+  satellitePrefab: {fileID: 1860245808128708, guid: 42b9bdc930aa1144eb4fe20447a8c144,
+    type: 2}
+  relayPrefab: {fileID: 1662843700380820, guid: 5c63f26cfbb12574480b7213141e13f6,
+    type: 2}
+  echoPrefab: {fileID: 1427398023912540, guid: fe2744b3e8a08e04f83d07c4fa0229c8, type: 2}
+  cityPrefab: {fileID: 1502146480000150, guid: 9ccd37062b6827c4097c08c05606d4b4, type: 2}
+  winScreen: {fileID: 1769018717086572, guid: 83045f5fa7255744fbdb53cac937d636, type: 2}
+  loseScreen: {fileID: 1895433469570448, guid: 02efac52684b0a34eb3188bcc1995169, type: 2}
+  citiesInfo: 000001010101
+  satsToSpawn:
+  - satType: 2
+    satRow: 2
+    satRotation: 0
+  - satType: 3
+    satRow: 3
+    satRotation: 0
+  - satType: 4
+    satRow: 2
+    satRotation: 0
+  - satType: 1
+    satRow: 2
+    satRotation: 1
+  - satType: 2
+    satRow: 2
+    satRotation: 2
+  - satType: 0
+    satRow: 2
+    satRotation: 0
+--- !u!114 &114432538894747840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708763012995620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ba75c011031bb419c04d8ffd4d8824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114743873022478208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1708763012995620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11a4f81b11af0c46b2b346d2050a612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

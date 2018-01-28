@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainLevelScript : MonoBehaviour {
     public enum SatTypes {COLOR_RED, COLOR_GREEN, COLOR_BLUE, RELAY, ECHO, NONE};
     public enum SatRotation {UP, DOWN, RIGHT, LEFT};
+    public int maxMovementsAllowed;
 
     //public SatelliteTypes[] satsToSpawn;
 
@@ -20,6 +21,8 @@ public class MainLevelScript : MonoBehaviour {
     public SatInfo[] satsToSpawn;
     private bool won = false;
     private bool lost = false;
+    private int currentMovements;
+    private int actionsLeft;
 
     void Awake(){
         Manager.Inst().Destroy();
@@ -48,6 +51,9 @@ public class MainLevelScript : MonoBehaviour {
                     break;
             }
         }
+
+        SetActionsLeft(maxMovementsAllowed);
+        SetCurrentMovements(0);
         
 	}
 
@@ -58,11 +64,11 @@ public class MainLevelScript : MonoBehaviour {
             go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
             won = true;
         }
-        else if (CheckLoseCondition() && !lost){
+        else if (lost){
             GameObject go = Instantiate(loseScreen);
             go.transform.SetParent(GameObject.Find("Canvas").transform);
             go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-            lost = true;
+            lost = false;
         }
     }
 
@@ -126,9 +132,9 @@ public class MainLevelScript : MonoBehaviour {
         return true;
     }
 
-    bool CheckLoseCondition(){
-        //todo
-        return false;
+
+    void SetLoseCondition(bool value){
+        lost = true;
     }
     
     void SpawnRelay(int i) {
@@ -146,6 +152,25 @@ public class MainLevelScript : MonoBehaviour {
         echo.SetX(i);
         echo.SetY(satsToSpawn[i].satRow);
         Manager.AddEcho(echo);
+    }
+
+    public int GetCurrentMovements(){
+        return currentMovements;
+    }
+
+    public void SetCurrentMovements(int aValue){
+        currentMovements = aValue;
+    }
+
+    public int GetActionsLeft(){
+        return actionsLeft;
+    }
+
+    public void SetActionsLeft(int aValue){
+        actionsLeft = aValue;
+        if(actionsLeft <= 0){
+            SetLoseCondition(true);
+        }
     }
 
     void OnDestroy(){
