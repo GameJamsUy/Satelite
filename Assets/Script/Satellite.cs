@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Satellite : MonoBehaviour {
 
@@ -67,6 +68,7 @@ public class Satellite : MonoBehaviour {
         }
         
         while (currDeg > targetDeg + 6){
+            gameObject.GetComponentInChildren<Text>().text = "TgtDg: " + targetDeg + " / " + "anglDeg: " + angleDeg;
             currTime += Time.deltaTime;
             float t = currTime / totalTime;
             currDeg = transform.eulerAngles.z;
@@ -90,7 +92,7 @@ public class Satellite : MonoBehaviour {
         //totalmente desprolijo por estar apurado
         float targetDeg = angleDeg + degrees;
         float currDeg = angleDeg;
-        float totalTime = .7f;
+        float totalTime = 1f;
         float currTime = 0;
         if (targetDeg <= 0){
             targetDeg += 360;

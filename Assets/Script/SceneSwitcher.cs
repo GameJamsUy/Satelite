@@ -9,7 +9,9 @@ public class SceneSwitcher : MonoBehaviour {
     public string nextSceneToLoad;
     
     public void LoadNextScene() {
-        Manager.SaveMusicPlace(Manager.GetCurrentAudioSource().time);
+        if(Manager.GetCurrentAudioSource() != null){
+            Manager.SaveMusicPlace(Manager.GetCurrentAudioSource().time);
+        }
         SceneManager.LoadScene(nextSceneToLoad, LoadSceneMode.Single);
     }
 
