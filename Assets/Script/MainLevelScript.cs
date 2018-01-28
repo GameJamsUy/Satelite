@@ -20,7 +20,7 @@ public class MainLevelScript : MonoBehaviour {
     public int turnsForTwoStars;
     private int stars;
 
-
+    public bool playerInputEnabled;
     public bool[] citiesInfo;
     public SatInfo[] satsToSpawn;
     private bool won = false;
@@ -37,6 +37,7 @@ public class MainLevelScript : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
+        playerInputEnabled = true;
         SpawnSoundPlayer();
         SpawnCity();
         for (int i = 0; i <= GameConstants.maxX; i++){
@@ -76,6 +77,7 @@ public class MainLevelScript : MonoBehaviour {
     }
 
     IEnumerator EndOfGameEvent(bool state) {
+        playerInputEnabled = false;
         yield return new WaitForSeconds(waitAfterEndGameTime);
         if (state) {
             WonActions();

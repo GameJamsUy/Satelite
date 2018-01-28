@@ -275,7 +275,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[2].satRotation
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -300,7 +300,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[4].satRotation
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -308,8 +308,7 @@ Prefab:
       value: 
       objectReference: {fileID: 1786059453287444, guid: f0cc2bc929a732a42bd6bf44f3c69a6a,
         type: 2}
-    m_RemovedComponents:
-    - {fileID: 114743873022478208, guid: 571508a9dda7be645981bba173fc160b, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 571508a9dda7be645981bba173fc160b, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &67849246 stripped

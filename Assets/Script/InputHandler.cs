@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour {
+    MainLevelScript mainLevelScript;
 
 	// Use this for initialization
 	void Start () {
-		
+        mainLevelScript = transform.GetComponent<MainLevelScript>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        UpdateMouseBasedControl();
+        if (mainLevelScript.playerInputEnabled) {
+            UpdateMouseBasedControl();
+        }
     }
 
     private void UpdateMouseBasedControl() {

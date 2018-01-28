@@ -239,105 +239,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
-      propertyPath: citiesInfo.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: citiesInfo.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: citiesInfo.Array.data[3]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: citiesInfo.Array.data[4]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: citiesInfo.Array.data[5]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[0].satType
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[1].satType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[1].satRow
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[1].satRotation
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[2].satType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[2].satRotation
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[3].satType
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[3].satRotation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[4].satType
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[4].satRotation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[5].satType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
       propertyPath: soundPrefab
       value: 
       objectReference: {fileID: 1786059453287444, guid: f0cc2bc929a732a42bd6bf44f3c69a6a,
         type: 2}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[0].satRotation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[2].satRow
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
-        type: 2}
-      propertyPath: satsToSpawn.Array.data[4].satRow
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114743873022478208, guid: 571508a9dda7be645981bba173fc160b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 571508a9dda7be645981bba173fc160b, type: 2}
@@ -911,6 +816,7 @@ GameObject:
   - component: {fileID: 1070729169}
   - component: {fileID: 1070729168}
   - component: {fileID: 1070729167}
+  - component: {fileID: 1070729170}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -1022,6 +928,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1070729165}
+--- !u!114 &1070729170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1070729165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdfa7def2981f54cae0c6c5549cf978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButtonType: 0
 --- !u!1 &1114437065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,6 +1107,7 @@ GameObject:
   - component: {fileID: 1140431681}
   - component: {fileID: 1140431680}
   - component: {fileID: 1140431679}
+  - component: {fileID: 1140431682}
   m_Layer: 5
   m_Name: BackToMenu
   m_TagString: Untagged
@@ -1300,6 +1219,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1140431677}
+--- !u!114 &1140431682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1140431677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdfa7def2981f54cae0c6c5549cf978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButtonType: 2
 --- !u!1 &1251315695
 GameObject:
   m_ObjectHideFlags: 0

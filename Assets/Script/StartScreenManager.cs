@@ -65,7 +65,7 @@ public class StartScreenManager : MonoBehaviour {
             float t = currentLerpTime / animationSpeed;     //No Ease
                                                             //t = Mathf.Sin(t * Mathf.PI * 0.5f);  		//Ease OUT
                                                             //t = 1f - Mathf.Cos(t * Mathf.PI * 0.5f); 	//Ease IN
-            t = t * t * (3f - 2f * t);                      //Ease IN OUT
+            t = t * t * (3f - 2f * t);                                                                  //Ease IN OUT
                                                             //t = t*t*t * (t * (6f*t - 15f) + 10f);		//Ease IN OUT more
 
             if (t < 1.0f) {
