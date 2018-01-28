@@ -237,6 +237,10 @@ MonoBehaviour:
   onOffFrames:
   - {fileID: 21300000, guid: fd0e8801e1072b8428c64d509f567787, type: 3}
   - {fileID: 21300002, guid: fd0e8801e1072b8428c64d509f567787, type: 3}
+  randomCitySprites:
+  - {fileID: 21300000, guid: fd0e8801e1072b8428c64d509f567787, type: 3}
+  - {fileID: 21300000, guid: 7ef99a0ad0f0777469c2c059d41c5450, type: 3}
+  - {fileID: 21300000, guid: c48cedaa570fcfd43b4e212e6b82319a, type: 3}
   onParticleSystem: {fileID: 1481754501201690}
   onParticleSystemSideways: {fileID: 1607254644774800}
 --- !u!198 &198461972046053316

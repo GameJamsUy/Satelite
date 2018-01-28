@@ -8,6 +8,7 @@ public class City : MonoBehaviour {
 
     private int state;
     public Sprite[] onOffFrames;
+    public Sprite[] randomCitySprites;
     public GameObject onParticleSystem;
     public GameObject onParticleSystemSideways;
     private bool sidewaysTransmission;
@@ -17,6 +18,8 @@ public class City : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        sr.sprite = randomCitySprites[Random.Range(0, randomCitySprites.Length - 1)];
         transform.position = new Vector3(transform.position.x, transform.position.y, 3);
 	}
 	
@@ -45,12 +48,12 @@ public class City : MonoBehaviour {
                 onParticleSystem.SetActive(false);
                 onParticleSystemSideways.SetActive(true);
             }
-            sr.sprite = onOffFrames[1];
+            //sr.sprite = onOffFrames[1];
         }
         else{
             onParticleSystem.SetActive(false);
             onParticleSystemSideways.SetActive(false);
-            sr.sprite = onOffFrames[0];
+            //sr.sprite = onOffFrames[0];
         }
     }
 
