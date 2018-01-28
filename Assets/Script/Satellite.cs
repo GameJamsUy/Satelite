@@ -87,7 +87,7 @@ public class Satellite : MonoBehaviour {
         //totalmente desprolijo por estar apurado
         float targetDeg = angleDeg + degrees;
         float currDeg = angleDeg;
-        float totalTime = 1f;
+        float totalTime = .7f;
         float currTime = 0;
         if (targetDeg <= 0){
             targetDeg += 360;
