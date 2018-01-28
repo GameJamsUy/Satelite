@@ -32,12 +32,12 @@ public class Satellite : MonoBehaviour {
     private int currY;
     private int state;
 
-    private SoundScript _soundRef;
+    //private SoundScript _soundRef;
 
 
 	// Use this for initialization
 	void Start () {
-        _soundRef = transform.root.GetComponent<SceneSwitcher>().soundRef;
+        //_soundRef = transform.root.GetComponent<SceneSwitcher>().soundRef;
 	}
 	
 	// Update is called once per frame
@@ -140,7 +140,7 @@ public class Satellite : MonoBehaviour {
     public void Rotate(int satelliteRotation){
         if(state == STATE_IDLE){
             SetState(STATE_TURNING);
-            _soundRef.PlayShortSound(SoundScript.SoundType.SATELLITE_ROTATE);
+            //_soundRef.PlayShortSound(SoundScript.SoundType.SATELLITE_ROTATE);
             switch (satelliteRotation){
                 case ROTATE_RIGHT:
                     StartCoroutine(RotateRight(270));

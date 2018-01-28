@@ -12,8 +12,13 @@ public class InputHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (mainLevelScript.playerInputEnabled) {
+        if (transform.name == "StartScreen") {
             UpdateMouseBasedControl();
+        }
+        else {
+            if (mainLevelScript.playerInputEnabled) {
+                UpdateMouseBasedControl();
+            }
         }
     }
 

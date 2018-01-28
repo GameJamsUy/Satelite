@@ -48,7 +48,7 @@ public class StartScreenManager : MonoBehaviour {
     }
 
 
-    void SpawnSoundPlayer() {
+    void SpawnSoundPlayer() {        
         GameObject soundPlayerInstance = Instantiate(soundPrefab) as GameObject;
         soundPlayerInstance.transform.SetParent(transform.root);
         soundScript = soundPlayerInstance.GetComponent<SoundScript>();

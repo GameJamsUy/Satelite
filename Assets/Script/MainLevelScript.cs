@@ -30,7 +30,7 @@ public class MainLevelScript : MonoBehaviour {
 
     private SoundScript soundScript;
 
-    private float waitAfterEndGameTime = 3.0f;
+    private float waitAfterEndGameTime = 2.0f;
 
     void Awake(){
         Manager.Inst().Destroy();
@@ -78,6 +78,12 @@ public class MainLevelScript : MonoBehaviour {
 
     IEnumerator EndOfGameEvent(bool state) {
         playerInputEnabled = false;
+        if (state) {
+            soundScript.PlayShortSound(SoundScript.SoundType.PLAYER_WON);
+        }
+        else {
+            soundScript.PlayShortSound(SoundScript.SoundType.PLAYER_LOST);
+        }       
         yield return new WaitForSeconds(waitAfterEndGameTime);
         if (state) {
             WonActions();
