@@ -11,7 +11,7 @@ public class Lever : MonoBehaviour {
     public enum ActionType {ROTATE_RIGHT, ROTATE_LEFT, ROTATE_INVERT, ROTATE_FULL_TURN, MOVE_VERTICAL, NO_ACTION}
 
     public ActionInfo[] leverActions;
-
+    public MainLevelScript mls;
     private Animator animator;
 
     private void Awake() {
@@ -30,6 +30,8 @@ public class Lever : MonoBehaviour {
 
     public void LeverGetsClicked() {
         if(state == STATE_IDLE){
+            mls.SetCurrentMovements(mls.GetCurrentMovements() + 1);
+            mls.SetActionsLeft(mls.GetActionsLeft() - 1);
             for (int i = 0; i < leverActions.Length; i++){
                 PlayButtonAnimation();
                 switch (leverActions[i].satTargetType)
