@@ -32,7 +32,7 @@ public class MainLevelScript : MonoBehaviour {
 
     private SoundScript soundScript;
 
-    private float waitAfterEndGameTime = 2.0f;
+    private float waitAfterEndGameTime = 1.0f;
 
     void Awake(){
         Manager.Inst().ResetExceptMusic();
@@ -150,12 +150,18 @@ public class MainLevelScript : MonoBehaviour {
         // sets satellite color
         if (satsToSpawn[i].satType == SatTypes.COLOR_RED) {
             satellite.SetColor(Satellite.COLOR_RED);
+            satellite.BlueSat.SetActive(false);
+            satellite.GreenSat.SetActive(false);
         }
         else if (satsToSpawn[i].satType == SatTypes.COLOR_GREEN) {
             satellite.SetColor(Satellite.COLOR_GREEN);
+            satellite.BlueSat.SetActive(false);
+            satellite.RedSat.SetActive(false);
         }
         else if (satsToSpawn[i].satType == SatTypes.COLOR_BLUE) {
             satellite.SetColor(Satellite.COLOR_BLUE);
+            satellite.GreenSat.SetActive(false);
+            satellite.RedSat.SetActive(false);
         }
 
         // sets satellite starting rotation 
