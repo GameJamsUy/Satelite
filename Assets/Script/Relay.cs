@@ -158,7 +158,22 @@ public class Relay : MonoBehaviour {
                 return true;
             }
         }
+        
+        foreach(Relay currRelay in Manager.GetRelays()){
+            if(currRelay.GetY() == GetY() && currRelay.GetX() == GetX() - 1 && currRelay.GetState() == STATE_CONNECTED && currRelay.IsRecievingFromLeft()){
+                recievingFromLeft = true;
+                return true;
+            }
+            if(currRelay.GetY() == GetY() && currRelay.GetX() == GetX() + 1 && currRelay.GetState() == STATE_CONNECTED && !currRelay.IsRecievingFromLeft()){
+                recievingFromLeft = false;
+                return true;
+            }
+        }
 
         return false;
+    }
+
+    public bool IsRecievingFromLeft(){
+        return recievingFromLeft;
     }
 }
