@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Music : MonoBehaviour {
 
-    void Awake() {
-        DontDestroyOnLoad(transform.gameObject);
-    }
+    AudioSource audioSource;
 
-    // Update is called once per frame
+    void Start() {
+        audioSource = transform.GetComponent<AudioSource>();
+    } 
+    
     void Update () {
         FollowCamera();
 	}
@@ -17,9 +18,15 @@ public class Music : MonoBehaviour {
         transform.position = Camera.main.transform.position;
     }
 
+    public float GetTime() {
+        return audioSource.time;
+    }
 
-
-
+    /*
+    public SetTime(float input) {
+        audioSource.Play()
+    }
+    */
 
 
 }

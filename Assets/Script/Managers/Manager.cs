@@ -11,6 +11,7 @@ public class Manager{
     private EchoManager eManager;
     private CityManager cManager;
     private LeverManager lManager;
+    private MusicManager mManager;
 
 	public static Manager Inst(){
 		if(Manager.manager == null){
@@ -18,6 +19,10 @@ public class Manager{
 		}
 		return Manager.manager;
 	}
+
+    public static MusicManager MusicManager() {
+        return Manager.Inst().mManager;
+    }
 
 	public static RelayManager RelayManager(){
 		return Manager.Inst().rManager;
@@ -39,6 +44,10 @@ public class Manager{
         return Manager.Inst().lManager;
     }
 
+    public static void AddMusic(Music m) {
+        Manager.Inst().mManager.Add(m);
+    }
+
     public static void AddEcho(Echo e) {
         Manager.Inst().eManager.Add(e);
     }
@@ -56,6 +65,26 @@ public class Manager{
 
     public static void AddLever(Lever l){
         Manager.Inst().lManager.Add(l);
+    }
+
+
+
+
+
+    public static void SaveMusicPlace(float input) {
+        Manager.Inst().mManager.SaveLengthOfMusicPlayed(input);
+    }
+
+    public static float GetMusicPlace() {
+        return Manager.Inst().mManager.GetLengthOfMusicPlayed();
+    }
+
+
+
+
+
+    public static List<Music> GetMusics() {
+        return Manager.Inst().mManager.GetMusics();
     }
 
     public static List<Relay> GetRelays(){
@@ -86,6 +115,7 @@ public class Manager{
         this.eManager = new EchoManager();
         this.cManager = new CityManager();
         this.lManager = new LeverManager();
+        this.mManager = new MusicManager();
     }
 
 	public void Destroy(){
@@ -103,6 +133,11 @@ public class Manager{
 
         this.lManager.Destroy();
         this.lManager = null;
+
+        /*
+        this.mManager.Destroy();
+        this.mManager = null;
+        */
 
 		Manager.manager = null;
 		//GameObject.Destroy(gameObject);

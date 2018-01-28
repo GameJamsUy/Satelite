@@ -9,17 +9,17 @@ public class StartScreenManager : MonoBehaviour {
     public Transform mainMenuScreen;
 
     public GameObject soundPrefab;
+    public GameObject musicPrefab;
     public float animationSpeed = 1.0f;
     private float currentLerpTime;
     private IEnumerator animatorCoroutine;
 
     private SoundScript soundScript;
 
-
-
     // Use this for initialization
     void Start () {
         SpawnSoundPlayer();
+        SpawnMusicPlayer();
     }
 	
 	// Update is called once per frame
@@ -47,11 +47,18 @@ public class StartScreenManager : MonoBehaviour {
         sceneSwitcher.LoadNextScene();
     }
 
-
     void SpawnSoundPlayer() {        
         GameObject soundPlayerInstance = Instantiate(soundPrefab) as GameObject;
         soundPlayerInstance.transform.SetParent(transform.root);
         soundScript = soundPlayerInstance.GetComponent<SoundScript>();
+    }
+
+    void SpawnMusicPlayer() {
+        GameObject go = Instantiate(musicPrefab);
+        Music music = go.GetComponent<Music>();
+        Manager.AddMusic(music);
+        float musicPos = Manager.GetMusicPlace(); ;
+        
     }
 
     public IEnumerator animateOverTime(float startX, float endX, float startY, float startZ, Transform targetTransform) {
@@ -73,8 +80,6 @@ public class StartScreenManager : MonoBehaviour {
 
                 newCurrentPosition = new Vector3(Mathf.Lerp(startX, endX, t), startY, startZ);
                 targetTransform.position = newCurrentPosition;
-
-
                 yield return 0; // wait a frame
             }
             else {
