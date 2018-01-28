@@ -68,7 +68,8 @@ public class Satellite : MonoBehaviour {
         }
         
         while (currDeg > targetDeg + 6){
-            gameObject.GetComponentInChildren<Text>().text = "TgtDg: " + targetDeg + " / " + "anglDeg: " + angleDeg;
+            //gameObject.GetComponentInChildren<Text>().text = "TgtDg: " + targetDeg + " / " + "anglDeg: " + angleDeg;
+            gameObject.GetComponentInChildren<Text>().text = "";
             currTime += Time.deltaTime;
             float t = currTime / totalTime;
             currDeg = transform.eulerAngles.z;
