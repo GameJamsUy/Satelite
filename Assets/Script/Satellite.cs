@@ -66,7 +66,7 @@ public class Satellite : MonoBehaviour {
             targetDeg -= 360;
         }
         
-        while (currDeg > targetDeg + 3){
+        while (currDeg > targetDeg + 6){
             currTime += Time.deltaTime;
             float t = currTime / totalTime;
             currDeg = transform.eulerAngles.z;
@@ -100,7 +100,7 @@ public class Satellite : MonoBehaviour {
             currDeg = 0;
         }
 
-        while (currDeg < targetDeg - 3){
+        while (currDeg < targetDeg - 6){
             currTime += Time.deltaTime;
             currDeg = transform.eulerAngles.z;
             float t = currTime / totalTime;
