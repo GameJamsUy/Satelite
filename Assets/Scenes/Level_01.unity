@@ -230,7 +230,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: turnsForTwoStars
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}

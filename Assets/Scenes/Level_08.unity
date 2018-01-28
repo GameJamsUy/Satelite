@@ -220,17 +220,17 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[5].satRotation
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: turnsForThreeStars
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: turnsForTwoStars
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -265,22 +265,22 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[0].satType
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[1].satType
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[1].satRow
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[1].satRotation
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -310,7 +310,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[4].satRotation
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -330,12 +330,12 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: maxMovementsAllowed
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[2].satRow
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3dc461b1d8c3b4fa0454063d90744d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundRef: {fileID: 0}
   nextSceneToLoad: Level_09
 --- !u!4 &117831256
 Transform:

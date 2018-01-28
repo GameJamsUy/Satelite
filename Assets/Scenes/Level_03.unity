@@ -230,7 +230,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: turnsForTwoStars
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -250,7 +250,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: citiesInfo.Array.data[5]
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -1536,6 +1536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3dc461b1d8c3b4fa0454063d90744d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundRef: {fileID: 0}
   nextSceneToLoad: Level_04
 --- !u!4 &1643781491
 Transform:
