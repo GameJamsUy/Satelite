@@ -16,6 +16,8 @@ public class MainLevelScript : MonoBehaviour {
     public GameObject winScreen;
     public GameObject loseScreen;
     public GameObject soundPrefab;
+    public GameObject musicPrefab;
+    private Music music;
     public int turnsForThreeStars;
     public int turnsForTwoStars;
     private int stars;
@@ -33,7 +35,7 @@ public class MainLevelScript : MonoBehaviour {
     private float waitAfterEndGameTime = 2.0f;
 
     void Awake(){
-        Manager.Inst().Destroy();
+        Manager.Inst().ResetExceptMusic();
     }
     // Use this for initialization
     void Start () {
@@ -63,7 +65,8 @@ public class MainLevelScript : MonoBehaviour {
         }
 
         SetActionsLeft(maxMovementsAllowed);
-        SetCurrentMovements(0);      
+        SetCurrentMovements(0);
+        SpawnMusicPlayer();
 	}
 
     void Update(){
@@ -213,6 +216,16 @@ public class MainLevelScript : MonoBehaviour {
         Manager.AddEcho(echo);
     }
 
+    void SpawnMusicPlayer(){
+        float musicPos = Manager.GetMusicPlace();
+        Debug.Log(musicPos);
+        GameObject go = Instantiate(musicPrefab);
+        music = go.GetComponent<Music>();
+        AudioSource source = music.GetComponent<AudioSource>();
+        source.time = musicPos;
+        source.Play();
+    }
+
     public int GetCurrentMovements(){
         return currentMovements;
     }
@@ -233,7 +246,8 @@ public class MainLevelScript : MonoBehaviour {
     }
 
     void OnDestroy(){
-        Manager.Inst().Destroy();
+        Manager.Inst().ResetExceptMusic();
+        //Manager.SaveMusicPlace(music.GetComponent<AudioSource>().time);
     }
 
     [System.Serializable]

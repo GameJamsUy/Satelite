@@ -28,6 +28,7 @@ public class StartScreenManager : MonoBehaviour {
 	}
         
     public void CreditsClick() {
+        Debug.Log("asd");
         soundScript.PlayShortSound(SoundScript.SoundType.BUTTON_PRESS);
         currentLerpTime = 0f;
         animatorCoroutine = animateOverTime(cameraTransform.position.x, creditsScreen.position.x, cameraTransform.position.y, cameraTransform.position.z, cameraTransform);
@@ -58,7 +59,9 @@ public class StartScreenManager : MonoBehaviour {
         Music music = go.GetComponent<Music>();
         Manager.AddMusic(music);
         float musicPos = Manager.GetMusicPlace(); ;
-        
+        AudioSource source = music.GetComponent<AudioSource>();
+        source.time = musicPos;
+        source.Play();
     }
 
     public IEnumerator animateOverTime(float startX, float endX, float startY, float startZ, Transform targetTransform) {
@@ -91,11 +94,5 @@ public class StartScreenManager : MonoBehaviour {
             }
         }
     }
-
-
-
-
-
-
 
 }

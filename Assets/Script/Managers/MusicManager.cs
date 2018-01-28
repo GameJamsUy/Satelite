@@ -5,21 +5,25 @@ using System.Collections.Generic;
 
 public class MusicManager {
 
-    private List<Music> musics;
+    private Music music;
     private int length;
     private float lengthOfSongPlayed = 0.0f;
 
 
-    public void SaveLengthOfMusicPlayed(float input) {
-        lengthOfSongPlayed = input;
+    public void SetLengthOfMusicPlayed(float input) {
+        lengthOfSongPlayed = input;        
     }
 
     public float GetLengthOfMusicPlayed() {
         return lengthOfSongPlayed;
     }
 
+    public AudioSource GetCurrentAudioSource(){
+        return music.GetAudioSource();
+    }
+
     public MusicManager() {
-        musics = new List<Music>();
+        music = null;
         length = 0;
     }
 
@@ -27,41 +31,16 @@ public class MusicManager {
         return this.length;
     }
 
-    public List<Music> GetMusics() {
-        return this.musics;
+    public Music GetMusic() {
+        return this.music;
     }
 
-    public void Add(Music music) {
-        if (this.musics.Contains(music)) {
-            throw new ArgumentException("The music is already contained in the list.");
-        }
-        this.musics.Add(music);
-        this.length = this.length + 1;
-    }
-
-    private void RemoveAt(int index) {
-        if (index < 0 || index >= length) {
-            throw new ArgumentException("Invalid index: " + index);
-        }
-        this.musics.RemoveAt(index);
-        this.length = this.length - 1;
-    }
-
-    private void Remove(Music music) {
-        if (!this.musics.Contains(music)) {
-            throw new ArgumentException("Music not found");
-        }
-        this.musics.Remove(music);
+    public void Add(Music aMusic) {
+        music = aMusic;
     }
 
     public void Destroy() {
-        foreach (Music currMusic in this.musics) {
-            if (currMusic != null) {
-                //currCity.Destroy();
-            }
-        }
-        this.musics.Clear();
-        this.musics = new List<Music>();
+        music = null;
         this.length = 0;
     }
 }

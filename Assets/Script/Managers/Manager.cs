@@ -69,22 +69,20 @@ public class Manager{
 
 
 
-
+    public static AudioSource GetCurrentAudioSource(){
+        return Manager.Inst().mManager.GetCurrentAudioSource();
+    }
 
     public static void SaveMusicPlace(float input) {
-        Manager.Inst().mManager.SaveLengthOfMusicPlayed(input);
+        Manager.Inst().mManager.SetLengthOfMusicPlayed(input);
     }
 
     public static float GetMusicPlace() {
         return Manager.Inst().mManager.GetLengthOfMusicPlayed();
     }
 
-
-
-
-
-    public static List<Music> GetMusics() {
-        return Manager.Inst().mManager.GetMusics();
+    public static Music GetMusic() {
+        return Manager.Inst().mManager.GetMusic();
     }
 
     public static List<Relay> GetRelays(){
@@ -133,13 +131,35 @@ public class Manager{
 
         this.lManager.Destroy();
         this.lManager = null;
-
-        /*
+        
         this.mManager.Destroy();
         this.mManager = null;
-        */
+        
 
 		Manager.manager = null;
 		//GameObject.Destroy(gameObject);
 	}
+
+    public void ResetExceptMusic(){
+        this.rManager.Destroy();
+        this.rManager = null;
+
+        this.sManager.Destroy();
+        this.sManager = null;
+
+        this.eManager.Destroy();
+        this.eManager = null;
+
+        this.cManager.Destroy();
+        this.cManager = null;
+
+        this.lManager.Destroy();
+        this.lManager = null;
+
+        this.rManager = new RelayManager();
+        this.sManager = new SatelliteManager();
+        this.eManager = new EchoManager();
+        this.cManager = new CityManager();
+        this.lManager = new LeverManager();
+    }
 }

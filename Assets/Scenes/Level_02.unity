@@ -338,6 +338,12 @@ Prefab:
       value: 
       objectReference: {fileID: 1786059453287444, guid: f0cc2bc929a732a42bd6bf44f3c69a6a,
         type: 2}
+    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
+        type: 2}
+      propertyPath: musicPrefab
+      value: 
+      objectReference: {fileID: 1320575736869078, guid: f0afda95e1c3baa488ae758cafde72d2,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 114743873022478208, guid: 571508a9dda7be645981bba173fc160b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 571508a9dda7be645981bba173fc160b, type: 2}

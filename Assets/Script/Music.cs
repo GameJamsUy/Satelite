@@ -22,11 +22,15 @@ public class Music : MonoBehaviour {
         return audioSource.time;
     }
 
-    /*
-    public SetTime(float input) {
-        audioSource.Play()
+    
+    public void SetTime(float input) {
+        audioSource.time = input;
     }
-    */
+
+    public AudioSource GetAudioSource(){
+        return audioSource;
+    }
+    
 
 
 }
