@@ -19,6 +19,10 @@ public class Lever : MonoBehaviour {
         initialTransPos = transform.position;
     }
 
+    void Start(){
+        Manager.AddLever(this);
+    }
+
     public Sprite[] buttonSprites;
     public float idlePos;
     public float endPos;
@@ -29,7 +33,13 @@ public class Lever : MonoBehaviour {
     int blue = 2;
 
     public void LeverGetsClicked() {
-        if(state == STATE_IDLE){
+        bool moveable = true;
+        foreach (Lever currLever in Manager.GetLevers()){
+            if(currLever.GetState() != STATE_IDLE){
+                moveable = false;
+            }
+        }
+        if(moveable){
             mls.SetCurrentMovements(mls.GetCurrentMovements() + 1);
             mls.SetActionsLeft(mls.GetActionsLeft() - 1);
             for (int i = 0; i < leverActions.Length; i++){
@@ -94,6 +104,7 @@ public class Lever : MonoBehaviour {
             transform.position = new Vector2(pos.x, Mathf.Lerp(startPos, targetPos, t));
             yield return null;
         }
+        yield return new WaitForSeconds(.3f);
         SetState(STATE_IDLE);
         yield return null;
     }
