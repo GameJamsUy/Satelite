@@ -15,23 +15,29 @@ public class MainLevelScript : MonoBehaviour {
     public GameObject cityPrefab;
     public GameObject winScreen;
     public GameObject loseScreen;
+    public GameObject soundPrefab;
     public int turnsForThreeStars;
     public int turnsForTwoStars;
     private int stars;
 
-    public bool[] citiesInfo;
 
+    public bool[] citiesInfo;
     public SatInfo[] satsToSpawn;
     private bool won = false;
     private bool lost = false;
     private int currentMovements;
     private int actionsLeft;
 
+    private SoundScript soundScript;
+
+    private float waitAfterEndGameTime = 3.0f;
+
     void Awake(){
         Manager.Inst().Destroy();
     }
     // Use this for initialization
     void Start () {
+        SpawnSoundPlayer();
         SpawnCity();
         for (int i = 0; i <= GameConstants.maxX; i++){
             switch (satsToSpawn[i].satType) {
@@ -56,37 +62,56 @@ public class MainLevelScript : MonoBehaviour {
         }
 
         SetActionsLeft(maxMovementsAllowed);
-        SetCurrentMovements(0);
-        
+        SetCurrentMovements(0);      
 	}
 
     void Update(){
         if (CheckWinCondition() && !won){
             won = true;
-            GameObject go = Instantiate(winScreen);
-            go.transform.SetParent(GameObject.Find("Canvas").transform);
-            go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-            if(currentMovements <= turnsForThreeStars){
-                stars = 3;
-            }
-            else if(currentMovements > turnsForThreeStars && actionsLeft <= turnsForTwoStars){
-                stars = 2;
-            }
-            else{
-                stars = 1;
-            }
-            Debug.Log("stars: " + stars);
-            for (int i = 0; i < stars; i++){
-                go.GetComponent<WonScreen>().stars[i].SetActive(true);
-            }
+            StartCoroutine(EndOfGameEvent(true));
         }
         else if (lost){
-            GameObject go = Instantiate(loseScreen);
-            go.transform.SetParent(GameObject.Find("Canvas").transform);
-            go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-            lost = false;
+            StartCoroutine(EndOfGameEvent(false));
         }
     }
+
+    IEnumerator EndOfGameEvent(bool state) {
+        yield return new WaitForSeconds(waitAfterEndGameTime);
+        if (state) {
+            WonActions();
+        }
+        else {
+            LostActions();
+        }
+    }
+
+
+    void WonActions() {      
+        GameObject go = Instantiate(winScreen);
+        go.transform.SetParent(GameObject.Find("Canvas").transform);
+        go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        if (currentMovements <= turnsForThreeStars) {
+            stars = 3;
+        }
+        else if (currentMovements > turnsForThreeStars && actionsLeft <= turnsForTwoStars) {
+            stars = 2;
+        }
+        else {
+            stars = 1;
+        }
+        //Debug.Log("stars: " + stars);
+        for (int i = 0; i < stars; i++) {
+            go.GetComponent<WonScreen>().stars[i].SetActive(true);
+        }
+    }
+
+    void LostActions() {
+        GameObject go = Instantiate(loseScreen);
+        go.transform.SetParent(GameObject.Find("Canvas").transform);
+        go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        lost = false; // esto es asi?
+    }
+
 
     void SpawnCity() {
         for (int i = 0; i < citiesInfo.Length; i++) {
@@ -98,6 +123,13 @@ public class MainLevelScript : MonoBehaviour {
                 Manager.AddCity(city);
             }
         }
+    }
+
+    void SpawnSoundPlayer() {
+        GameObject soundPlayerInstance = Instantiate(soundPrefab) as GameObject;
+        soundPlayerInstance.transform.SetParent(transform.root);
+        soundScript = soundPlayerInstance.GetComponent<SoundScript>();
+        transform.root.GetComponent<SceneSwitcher>().soundRef = soundScript;
     }
 
     void SpawnSatellite(int i) {
@@ -132,6 +164,7 @@ public class MainLevelScript : MonoBehaviour {
 
         satellite.SetX(i);
         satellite.SetY(satsToSpawn[i].satRow);
+        satellite.transform.SetParent(transform.root);
 
         Manager.AddSatellite(satellite);
     }
@@ -158,6 +191,7 @@ public class MainLevelScript : MonoBehaviour {
         Relay relay = go.GetComponent<Relay>();
         relay.SetX(i);
         relay.SetY(satsToSpawn[i].satRow);
+        relay.transform.SetParent(transform.root);
         Manager.AddRelay(relay);
     }
 
@@ -167,6 +201,7 @@ public class MainLevelScript : MonoBehaviour {
         Echo echo = go.GetComponent<Echo>();
         echo.SetX(i);
         echo.SetY(satsToSpawn[i].satRow);
+        echo.transform.SetParent(transform.root);
         Manager.AddEcho(echo);
     }
 

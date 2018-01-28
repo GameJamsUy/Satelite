@@ -4,19 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartScreenManager : MonoBehaviour {
-
     public Transform cameraTransform;
     public Transform creditsScreen;
     public Transform mainMenuScreen;
 
+    public GameObject soundPrefab;
     public float animationSpeed = 1.0f;
     private float currentLerpTime;
     private IEnumerator animatorCoroutine;
 
+    private SoundScript soundScript;
+
+
+
     // Use this for initialization
     void Start () {
-		
-	}
+        SpawnSoundPlayer();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,21 +28,31 @@ public class StartScreenManager : MonoBehaviour {
 	}
         
     public void CreditsClick() {
+        soundScript.PlayShortSound(SoundScript.SoundType.BUTTON_PRESS);
         currentLerpTime = 0f;
         animatorCoroutine = animateOverTime(cameraTransform.position.x, creditsScreen.position.x, cameraTransform.position.y, cameraTransform.position.z, cameraTransform);
         StartCoroutine(animatorCoroutine);
     }
 
     public void BackCreditsClick() {
+        soundScript.PlayShortSound(SoundScript.SoundType.BUTTON_PRESS);
         currentLerpTime = 0f;
         animatorCoroutine = animateOverTime(cameraTransform.position.x, mainMenuScreen.position.x, cameraTransform.position.y, cameraTransform.position.z, cameraTransform);
         StartCoroutine(animatorCoroutine);
     }
 
     public void PlayButtonClick() {
-        SceneManager.LoadScene("main", LoadSceneMode.Single);
+        //soundScript.PlayShortSound(SoundScript.SoundType.BUTTON_PRESS);
+        SceneSwitcher sceneSwitcher = transform.GetComponent<SceneSwitcher>();
+        sceneSwitcher.LoadNextScene();
     }
 
+
+    void SpawnSoundPlayer() {
+        GameObject soundPlayerInstance = Instantiate(soundPrefab) as GameObject;
+        soundPlayerInstance.transform.SetParent(transform.root);
+        soundScript = soundPlayerInstance.GetComponent<SoundScript>();
+    }
 
     public IEnumerator animateOverTime(float startX, float endX, float startY, float startZ, Transform targetTransform) {
         while (true) {

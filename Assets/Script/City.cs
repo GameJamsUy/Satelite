@@ -67,7 +67,7 @@ public class City : MonoBehaviour {
             }
             if (currEcho.GetX() + 1 == GetX() && currEcho.GetState() == Echo.STATE_ON){
                 sidewaysTransmission = true;
-                Debug.Log(sidewaysTransmission);
+                //Debug.Log(sidewaysTransmission);
                 return true;
             }
         }

@@ -7,20 +7,22 @@ public class Lever : MonoBehaviour {
     public const int STATE_IDLE = 0;
     public const int STATE_MOVING = 1;
     private int state;
+    private SoundScript _soundRef;
 
     public enum ActionType {ROTATE_RIGHT, ROTATE_LEFT, ROTATE_INVERT, ROTATE_FULL_TURN, MOVE_VERTICAL, NO_ACTION}
 
     public ActionInfo[] leverActions;
     public MainLevelScript mls;
-    private Animator animator;
+    //private Animator animator;
 
     private void Awake() {
-        animator = transform.GetChild(0).GetComponent<Animator>();
+        //animator = transform.GetChild(0).GetComponent<Animator>();
         initialTransPos = transform.position;
     }
 
     void Start(){
         Manager.AddLever(this);
+        _soundRef = transform.root.GetComponent<SceneSwitcher>().soundRef;
     }
 
     public Sprite[] buttonSprites;
@@ -74,6 +76,7 @@ public class Lever : MonoBehaviour {
 
     void PlayButtonAnimation() {
         //animator.SetTrigger("buttonPress");
+        _soundRef.PlayShortSound(SoundScript.SoundType.BUTTON_PRESS);
         StartCoroutine(MoveButtonDown());
     }
 

@@ -13,12 +13,13 @@ public class Relay : MonoBehaviour {
     private int state = 0;
     private int currX;
     private int currY;
+    private SoundScript _soundRef;
 
     private bool fromDown = false;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        _soundRef = transform.root.GetComponent<SceneSwitcher>().soundRef;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,6 +33,7 @@ public class Relay : MonoBehaviour {
 
 
     public void MoveVertical() {
+        _soundRef.PlayShortSound(SoundScript.SoundType.SATELLITE_ROTATE);
         if (currY == 2 && fromDown == false) {
             MoveDown();
         }

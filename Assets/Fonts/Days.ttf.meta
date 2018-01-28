@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 922d34cb4e10e2b4089478ac9c103f32
+timeCreated: 1517078815
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Days
+  fontNames:
+  - Days
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 222874923562502086}
   - component: {fileID: 114864275326707468}
   - component: {fileID: 114508224119477502}
+  - component: {fileID: 114616529813204408}
   m_Layer: 5
   m_Name: BackToMenu (1)
   m_TagString: Untagged
@@ -145,6 +146,7 @@ GameObject:
   - component: {fileID: 222903600246131820}
   - component: {fileID: 114510096135445156}
   - component: {fileID: 114503196952961446}
+  - component: {fileID: 114476573095346568}
   m_Layer: 5
   m_Name: Restart (1)
   m_TagString: Untagged
@@ -249,6 +251,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: NOT QUITE
+--- !u!114 &114476573095346568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1954456776060370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdfa7def2981f54cae0c6c5549cf978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButtonType: 0
 --- !u!114 &114503196952961446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,9 +302,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114743873022478208, guid: 571508a9dda7be645981bba173fc160b,
-          type: 2}
-        m_MethodName: RestartButton
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -341,9 +354,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114743873022478208, guid: 571508a9dda7be645981bba173fc160b,
-          type: 2}
-        m_MethodName: BackToMenu
+      - m_Target: {fileID: 0}
+        m_MethodName: GoToStartMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -396,6 +408,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 0.5, y: 0.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &114616529813204408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1555621530687518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdfa7def2981f54cae0c6c5549cf978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisButtonType: 2
 --- !u!114 &114637887358675144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -746,7 +770,7 @@ RectTransform:
   m_GameObject: {fileID: 1895433469570448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 224256948009830344}
   - {fileID: 224407387795774676}

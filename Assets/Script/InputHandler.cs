@@ -54,9 +54,16 @@ public class InputHandler : MonoBehaviour {
 
         //User clicks on play button in start menu
         if (hit.collider != null && hit.collider.name == ("StartGameButton")) {
-            StartScreenManager startScreen = transform.GetComponent<StartScreenManager>();
-            startScreen.PlayButtonClick();
+            SceneSwitcher sceneSwitcher = transform.root.GetComponent<SceneSwitcher>();
+            sceneSwitcher.LoadNextScene();
         }
+
+        //User clicks on exit button in start menu
+        if (hit.collider != null && hit.collider.name == ("ExitButton")) {
+            SceneSwitcher sceneSwitcher = transform.root.GetComponent<SceneSwitcher>();
+            sceneSwitcher.ExitGame();
+        }
+
 
     }
 

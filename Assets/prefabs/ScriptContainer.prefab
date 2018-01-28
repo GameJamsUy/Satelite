@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4022477787185332}
   - component: {fileID: 114406777076426204}
   - component: {fileID: 114432538894747840}
-  - component: {fileID: 114743873022478208}
   m_Layer: 0
   m_Name: ScriptContainer
   m_TagString: Untagged
@@ -62,6 +61,8 @@ MonoBehaviour:
   cityPrefab: {fileID: 1502146480000150, guid: 9ccd37062b6827c4097c08c05606d4b4, type: 2}
   winScreen: {fileID: 1769018717086572, guid: 83045f5fa7255744fbdb53cac937d636, type: 2}
   loseScreen: {fileID: 1895433469570448, guid: 02efac52684b0a34eb3188bcc1995169, type: 2}
+  turnsForThreeStars: 0
+  turnsForTwoStars: 0
   citiesInfo: 000001010101
   satsToSpawn:
   - satType: 2
@@ -91,16 +92,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52ba75c011031bb419c04d8ffd4d8824, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114743873022478208
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1708763012995620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a11a4f81b11af0c46b2b346d2050a612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
