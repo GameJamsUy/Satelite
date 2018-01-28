@@ -222,6 +222,21 @@ Prefab:
       propertyPath: satsToSpawn.Array.data[5].satRotation
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
+        type: 2}
+      propertyPath: turnsForThreeStars
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
+        type: 2}
+      propertyPath: turnsForTwoStars
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
+        type: 2}
+      propertyPath: turnsForOneStar
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 571508a9dda7be645981bba173fc160b, type: 2}
   m_IsPrefabParent: 0
@@ -1434,7 +1449,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1360206095
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 90984f510040a3149bb6f70571976ea9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 133134fba92dd134895429ea8b26d4dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

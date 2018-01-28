@@ -15,6 +15,9 @@ public class MainLevelScript : MonoBehaviour {
     public GameObject cityPrefab;
     public GameObject winScreen;
     public GameObject loseScreen;
+    public int turnsForThreeStars;
+    public int turnsForTwoStars;
+    private int stars;
 
     public bool[] citiesInfo;
 
@@ -59,10 +62,23 @@ public class MainLevelScript : MonoBehaviour {
 
     void Update(){
         if (CheckWinCondition() && !won){
+            won = true;
             GameObject go = Instantiate(winScreen);
             go.transform.SetParent(GameObject.Find("Canvas").transform);
             go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-            won = true;
+            if(currentMovements <= turnsForThreeStars){
+                stars = 3;
+            }
+            else if(currentMovements > turnsForThreeStars && actionsLeft <= turnsForTwoStars){
+                stars = 2;
+            }
+            else{
+                stars = 1;
+            }
+            Debug.Log("stars: " + stars);
+            for (int i = 0; i < stars; i++){
+                go.GetComponent<WonScreen>().stars[i].SetActive(true);
+            }
         }
         else if (lost){
             GameObject go = Instantiate(loseScreen);
