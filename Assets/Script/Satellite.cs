@@ -23,6 +23,12 @@ public class Satellite : MonoBehaviour {
     public const int ROTATE_INVERT    = 2;
     public const int ROTATE_FULL_TURN = 3;
 
+    public GameObject RedAnimated;
+    public GameObject GreenAnimated;
+    public GameObject BlueAnimated;
+
+
+
     public Sprite[] colors;
     private bool transmitting;
     public GameObject transmittingParticle;

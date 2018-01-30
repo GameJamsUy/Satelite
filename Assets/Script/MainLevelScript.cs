@@ -150,18 +150,24 @@ public class MainLevelScript : MonoBehaviour {
         // sets satellite color
         if (satsToSpawn[i].satType == SatTypes.COLOR_RED) {
             satellite.SetColor(Satellite.COLOR_RED);
-            satellite.BlueSat.SetActive(false);
-            satellite.GreenSat.SetActive(false);
+            
+            satellite.BlueAnimated.SetActive(false);
+            satellite.GreenAnimated.SetActive(false);
+            
         }
         else if (satsToSpawn[i].satType == SatTypes.COLOR_GREEN) {
             satellite.SetColor(Satellite.COLOR_GREEN);
-            satellite.BlueSat.SetActive(false);
-            satellite.RedSat.SetActive(false);
+            
+            satellite.BlueAnimated.SetActive(false);
+            satellite.RedAnimated.SetActive(false);
+            
         }
         else if (satsToSpawn[i].satType == SatTypes.COLOR_BLUE) {
             satellite.SetColor(Satellite.COLOR_BLUE);
-            satellite.GreenSat.SetActive(false);
-            satellite.RedSat.SetActive(false);
+            
+            satellite.GreenAnimated.SetActive(false);
+            satellite.RedAnimated.SetActive(false);
+            
         }
 
         // sets satellite starting rotation 
