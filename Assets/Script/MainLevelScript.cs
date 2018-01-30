@@ -229,10 +229,19 @@ public class MainLevelScript : MonoBehaviour {
     }
 
     void SpawnMusicPlayer(){
+        /*
         float musicPos = Manager.GetMusicPlace();
         Debug.Log(musicPos);
         GameObject go = Instantiate(musicPrefab);
         music = go.GetComponent<Music>();
+        AudioSource source = music.GetComponent<AudioSource>();
+        source.time = musicPos;
+        source.Play();
+        */
+        GameObject go = Instantiate(musicPrefab);
+        Music music = go.GetComponent<Music>();
+        Manager.AddMusic(music);
+        float musicPos = Manager.GetMusicPlace(); ;
         AudioSource source = music.GetComponent<AudioSource>();
         source.time = musicPos;
         source.Play();
