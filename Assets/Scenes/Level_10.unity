@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundRef: {fileID: 0}
-  nextSceneToLoad: Level_09
+  nextSceneToLoad: StartScreen
 --- !u!4 &117831256
 Transform:
   m_ObjectHideFlags: 0
