@@ -220,17 +220,17 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[5].satRotation
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: turnsForThreeStars
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: turnsForTwoStars
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -260,7 +260,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[1].satType
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -270,12 +270,12 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[2].satType
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[2].satRotation
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -285,7 +285,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[4].satType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -300,7 +300,7 @@ Prefab:
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
       propertyPath: satsToSpawn.Array.data[4].satRotation
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
         type: 2}
@@ -314,6 +314,16 @@ Prefab:
       value: 
       objectReference: {fileID: 1320575736869078, guid: f0afda95e1c3baa488ae758cafde72d2,
         type: 2}
+    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
+        type: 2}
+      propertyPath: satsToSpawn.Array.data[1].satRotation
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114406777076426204, guid: 571508a9dda7be645981bba173fc160b,
+        type: 2}
+      propertyPath: satsToSpawn.Array.data[2].satRow
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114743873022478208, guid: 571508a9dda7be645981bba173fc160b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 571508a9dda7be645981bba173fc160b, type: 2}
@@ -1089,6 +1099,7 @@ GameObject:
   - component: {fileID: 1126810950}
   - component: {fileID: 1126810949}
   - component: {fileID: 1126810948}
+  - component: {fileID: 1126810953}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1164,6 +1175,18 @@ Transform:
   m_Father: {fileID: 1643781491}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1126810953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126810947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 83d1b6fda2a98834ebc9ce9787ce7591, type: 2}
 --- !u!1 &1140431677
 GameObject:
   m_ObjectHideFlags: 0
